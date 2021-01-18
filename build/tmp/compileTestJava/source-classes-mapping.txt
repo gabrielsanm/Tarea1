@@ -1,0 +1,8 @@
+testSuite/RellenarCampos.java
+ testSuite.RellenarCampos
+testSuite/Login.java
+ testSuite.Login
+testSuite/RellenarCampos2.java
+ testSuite.RellenarCampos2
+page/QANovaTest.java
+ page.QANovaTest
