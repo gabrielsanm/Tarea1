@@ -1,6 +1,6 @@
 package page;
 
-import org.openqa.selenium.WebDriver;
+import Utils.DriverContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -19,8 +19,8 @@ public class Login {
     @FindBy(xpath = "//*[@id=\"dynObj_02\"]/p/a")
     WebElement linkCrearUsuario;
 
-    public Login(WebDriver webDriver){
-        PageFactory.initElements(webDriver, this);
+    public Login(){
+        PageFactory.initElements(DriverContext.getDriver(), this);
     }
 
     public void ingresar(String usuario, String clave){
