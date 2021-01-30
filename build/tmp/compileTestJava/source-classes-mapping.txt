@@ -1,8 +1,17 @@
-testSuite/RellenarCampos.java
- testSuite.RellenarCampos
-testSuite/Login.java
- testSuite.Login
-testSuite/RellenarCampos2.java
- testSuite.RellenarCampos2
-page/QANovaTest.java
- page.QANovaTest
+Utils/DriverManager.java
+ driver.DriverManager
+ driver.DriverManager$1
+Utils/ReadProperties.java
+ Utils.ReadProperties
+Utils/Navegador.java
+ constants.Navegador
+testClases/Tarea1.java
+ testClases.Tarea1
+Utils/DriverContext.java
+ Utils.DriverContext
+page/Login.java
+ page.Login
+testSuite/Ejecucion.java
+ testSuite.Ejecucion
+page/CargaInformacion.java
+ page.CargaInformacion

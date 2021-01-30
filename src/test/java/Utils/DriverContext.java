@@ -2,6 +2,7 @@ package Utils;
 
 import constants.Navegador;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class DriverContext {
 
@@ -30,6 +31,10 @@ public class DriverContext {
 
     public static WebDriver getDriver() {
         return driverManager.getDriver();
+    }
+
+    public static void closeDriver(){
+       driverManager.closeDriver();
     }
 
 }

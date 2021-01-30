@@ -42,4 +42,8 @@ public class DriverManager {
     public WebDriver getDriver() {
         return webDriver;
     }
+
+    public void closeDriver(){
+        webDriver.close();
+    }
 }
