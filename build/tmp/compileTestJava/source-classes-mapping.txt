@@ -11,7 +11,11 @@ Utils/DriverContext.java
  Utils.DriverContext
 page/Login.java
  page.Login
-testSuite/Ejecucion.java
- testSuite.Ejecucion
 page/CargaInformacion.java
  page.CargaInformacion
+testSuite/Ejecucion.java
+ testSuite.Ejecucion
+page/MatrizInformacion.java
+ page.MatrizInformacion
+testClases/Tarea2.java
+ testClases.Tarea2

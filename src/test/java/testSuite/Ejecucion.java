@@ -7,6 +7,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import testClases.Tarea1;
+import testClases.Tarea2;
 
 public class Ejecucion {
 
@@ -25,5 +26,11 @@ public class Ejecucion {
     public void tarea1() throws InterruptedException {
         Tarea1 tarea1 = new Tarea1();
         tarea1.tareaNro1();
+    }
+
+    @Test
+    public void tarea2() throws InterruptedException {
+        Tarea2 tarea2 = new Tarea2();
+        tarea2.tareaNro2();
     }
 }
