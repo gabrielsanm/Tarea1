@@ -1,6 +1,7 @@
 package page;
 
 import Utils.DriverContext;
+import Utils.Validaciones;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -26,15 +27,7 @@ public class MatrizInformacion {
     }
 
     public void validarDespliegue() throws InterruptedException {
-        /*while (segundos < 60){
-            if(){
-                break;
-            } else {
-                Wait 1000;
-                segundos = segundos + 1;
-            }
-        }*/
-        Thread.sleep(10000);
+        Validaciones.validarObjeto(btnFiltro, "Boton Filtro");
     }
 
     public void ingresarMatriz() {

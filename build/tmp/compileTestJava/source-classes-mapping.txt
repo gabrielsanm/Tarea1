@@ -5,17 +5,25 @@ Utils/ReadProperties.java
  Utils.ReadProperties
 Utils/Navegador.java
  constants.Navegador
-testClases/Tarea1.java
- testClases.Tarea1
+Utils/Validaciones.java
+ Utils.Validaciones
 Utils/DriverContext.java
  Utils.DriverContext
-page/Login.java
- page.Login
-page/CargaInformacion.java
- page.CargaInformacion
-testSuite/Ejecucion.java
- testSuite.Ejecucion
 page/MatrizInformacion.java
  page.MatrizInformacion
-testClases/Tarea2.java
- testClases.Tarea2
+testClases/RecuperarInformacion.java
+ testClases.RecuperarInformacion
+page/CargaInformacion.java
+ page.CargaInformacion
+page/Login.java
+ page.Login
+testClases/CargaDeInformacion.java
+ testClases.CargaDeInformacion
+testClases/Ingreso.java
+ testClases.Ingreso
+testSuite/Ejecucion.java
+ testSuite.Ejecucion
+page/CargaArchivos.java
+ page.CargaArchivos
+testClases/CargaDeArchivos.java
+ testClases.CargaDeArchivos

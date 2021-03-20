@@ -6,8 +6,10 @@ import constants.Navegador;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import testClases.Tarea1;
-import testClases.Tarea2;
+import testClases.CargaDeArchivos;
+import testClases.CargaDeInformacion;
+import testClases.Ingreso;
+import testClases.RecuperarInformacion;
 
 public class Ejecucion {
 
@@ -23,14 +25,32 @@ public class Ejecucion {
     }
 
     @Test
-    public void tarea1() throws InterruptedException {
-        Tarea1 tarea1 = new Tarea1();
-        tarea1.tareaNro1();
+    public void cargarDatos() throws InterruptedException {
+        CargaDeInformacion cargaDeInformacion = new CargaDeInformacion();
+        cargaDeInformacion.cargarDatos();
     }
 
     @Test
-    public void tarea2() throws InterruptedException {
-        Tarea2 tarea2 = new Tarea2();
-        tarea2.tareaNro2();
+    public void recuperacionDeInformacion() throws InterruptedException {
+        RecuperarInformacion recuperarInformacion = new RecuperarInformacion();
+        recuperarInformacion.recuperacionConFiltro();
+    }
+
+    @Test
+    public void loginExitoso() throws InterruptedException {
+        Ingreso ingreso = new Ingreso();
+        ingreso.exitoso();
+    }
+
+    @Test
+    public void loginErroneo(){
+        Ingreso ingreso = new Ingreso();
+        ingreso.erroneo();
+    }
+
+    @Test
+    public void cargarArchivo(){
+        CargaDeArchivos cargaDeArchivos = new CargaDeArchivos();
+        cargaDeArchivos.cargar();
     }
 }

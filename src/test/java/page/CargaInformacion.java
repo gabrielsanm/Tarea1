@@ -1,12 +1,16 @@
 package page;
 
 import Utils.DriverContext;
+import Utils.ReadProperties;
+import Utils.Validaciones;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
@@ -54,22 +58,12 @@ public class CargaInformacion {
     @FindBy(xpath = "//*[@id=\"imObjectForm_1_buttonswrap\"]/input[2]")
     WebElement btnReset;
 
-    int segundos = 0;
-
     public CargaInformacion(){
         PageFactory.initElements(DriverContext.getDriver(), this);
     }
 
-    public void validarDespliegue() throws InterruptedException {
-        /*while (segundos < 60){
-            if(){
-                break;
-            } else {
-                Wait 1000;
-                segundos = segundos + 1;
-            }
-        }*/
-        Thread.sleep(10000);
+    public void validarDespliegue() {
+        Validaciones.validarObjeto(btnEnviar, "Boton Enviar");
     }
 
     public void ingresarDatos(String texto, String correo, String area, String fecha, int lista, int checkBox, int radioButton){
