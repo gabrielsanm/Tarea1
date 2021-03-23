@@ -16,7 +16,7 @@ public class CargaDeInformacion {
         login.ingresar(usuario, clave);
         cargaInformacion = new CargaInformacion();
         cargaInformacion.validarDespliegue();
-        cargaInformacion.ingresarDatos("Leonardo Venegas", "q@q.cl", "Esta es una prueba automatizada", "30/01/2021", 2,3,1);
+        cargaInformacion.ingresarDatos("Leonardo Venegas", "q@q.cl", "Esta es una prueba automatizada", "30/01/2021", 2, 3, 1);
         cargaInformacion.presionarBotonEnviar();
     }
 }

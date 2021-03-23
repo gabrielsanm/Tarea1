@@ -16,7 +16,7 @@ public class Validaciones {
                 identificador = elemento.getAttribute("id");
             }
             System.out.println("Se despliega correctamente el elemento \"" + descripcionElemento + "\", identificador: " + identificador);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("No se despliega el elemento \"" + descripcionElemento + "\"");
         }
     }

@@ -37,6 +37,12 @@ public class Ejecucion {
     }
 
     @Test
+    public void recuperacionDeInformacion2() throws InterruptedException {
+        RecuperarInformacion recuperarInformacion = new RecuperarInformacion();
+        recuperarInformacion.recuperacionConFiltro2();
+    }
+
+    @Test
     public void loginExitoso() throws InterruptedException {
         Ingreso ingreso = new Ingreso();
         ingreso.exitoso();

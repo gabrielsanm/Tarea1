@@ -22,6 +22,9 @@ public class MatrizInformacion {
     @FindBy(id = "pluginAppObj_4_01_jtable")
     WebElement tblDatos;
 
+    @FindBy(xpath = "//*[@id=\"pluginAppObj_4_01_jtable\"]/div/table/tbody")
+    WebElement tblBody;
+
     public MatrizInformacion() {
         PageFactory.initElements(DriverContext.getDriver(), this);
     }
@@ -62,5 +65,11 @@ public class MatrizInformacion {
         System.out.println("SELECCION: "+"\n"+seleccion);
         System.out.println("RADIO: "+"\n"+radio);
         System.out.println("*****************************************************************************************");
+    }
+
+    public void recuperarDatos2(String busqueda) throws InterruptedException {
+        txtBusqueda.sendKeys(busqueda);
+        btnFiltro.click();
+        Thread.sleep(5000);
     }
 }

@@ -9,10 +9,10 @@ Utils/Validaciones.java
  Utils.Validaciones
 Utils/DriverContext.java
  Utils.DriverContext
-page/MatrizInformacion.java
- page.MatrizInformacion
-testClases/RecuperarInformacion.java
- testClases.RecuperarInformacion
+testClases/CargaDeArchivos.java
+ testClases.CargaDeArchivos
+page/CargaArchivos.java
+ page.CargaArchivos
 page/CargaInformacion.java
  page.CargaInformacion
 page/Login.java
@@ -21,9 +21,9 @@ testClases/CargaDeInformacion.java
  testClases.CargaDeInformacion
 testClases/Ingreso.java
  testClases.Ingreso
+page/MatrizInformacion.java
+ page.MatrizInformacion
 testSuite/Ejecucion.java
  testSuite.Ejecucion
-page/CargaArchivos.java
- page.CargaArchivos
-testClases/CargaDeArchivos.java
- testClases.CargaDeArchivos
+testClases/RecuperarInformacion.java
+ testClases.RecuperarInformacion

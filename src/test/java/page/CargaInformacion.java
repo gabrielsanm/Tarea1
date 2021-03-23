@@ -1,18 +1,11 @@
 package page;
 
 import Utils.DriverContext;
-import Utils.ReadProperties;
 import Utils.Validaciones;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.concurrent.TimeUnit;
 
 public class CargaInformacion {
 
@@ -58,7 +51,7 @@ public class CargaInformacion {
     @FindBy(xpath = "//*[@id=\"imObjectForm_1_buttonswrap\"]/input[2]")
     WebElement btnReset;
 
-    public CargaInformacion(){
+    public CargaInformacion() {
         PageFactory.initElements(DriverContext.getDriver(), this);
     }
 
@@ -66,7 +59,7 @@ public class CargaInformacion {
         Validaciones.validarObjeto(btnEnviar, "Boton Enviar");
     }
 
-    public void ingresarDatos(String texto, String correo, String area, String fecha, int lista, int checkBox, int radioButton){
+    public void ingresarDatos(String texto, String correo, String area, String fecha, int lista, int checkBox, int radioButton) {
         Select select = new Select(lstLista);
         inpTexto.sendKeys(texto);
         inpCorreo.sendKeys(correo);
@@ -74,7 +67,7 @@ public class CargaInformacion {
         dtFecha.sendKeys(fecha);
         String list = "valor ".concat(String.valueOf(lista));
         select.selectByVisibleText(list);
-        switch (checkBox){
+        switch (checkBox) {
             case 1:
                 chckbxSeleccionMultiple1.click();
                 break;
@@ -87,7 +80,7 @@ public class CargaInformacion {
             default:
                 System.out.println("Opcion no valida");
         }
-        switch (radioButton){
+        switch (radioButton) {
             case 1:
                 rdbtnCombo1.click();
                 break;
@@ -102,7 +95,7 @@ public class CargaInformacion {
         }
     }
 
-    public void presionarBotonEnviar(){
+    public void presionarBotonEnviar() {
         btnEnviar.click();
     }
 }
