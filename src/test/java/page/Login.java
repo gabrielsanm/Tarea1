@@ -1,14 +1,13 @@
 package page;
 
 import Utils.DriverContext;
-import Utils.ReadProperties;
+import Utils.Reporte.EstadoPrueba;
+import Utils.Reporte.PdfQaNovaReports;
 import Utils.Validaciones;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Login {
 
@@ -33,6 +32,7 @@ public class Login {
         txtUsuario.sendKeys(usuario);
         txtClave.sendKeys(clave);
         btnIngresar.click();
+        PdfQaNovaReports.addReport("Credenciales", "Se añaden las credenciales "+usuario+", "+clave+".", EstadoPrueba.PASSED, false);
     }
 
     public void validarMensajeError(){

@@ -1,15 +1,15 @@
 package testSuite;
 
+import Utils.Constants.Navegador;
 import Utils.DriverContext;
 import Utils.ReadProperties;
-import constants.Navegador;
+import Utils.Reporte.PdfQaNovaReports;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import testClases.CargaDeArchivos;
-import testClases.CargaDeInformacion;
-import testClases.Ingreso;
-import testClases.RecuperarInformacion;
+import testClases.*;
+
+import java.io.IOException;
 
 public class Ejecucion {
 
@@ -17,11 +17,13 @@ public class Ejecucion {
     public void setUp(){
         String url = ReadProperties.readFromConfig("propiedades.properties").getProperty("web");
         DriverContext.setUp(Navegador.Chrome, url);
+        PdfQaNovaReports.createPDF();
     }
 
     @AfterTest
     public void tearDown(){
         DriverContext.closeDriver();
+        PdfQaNovaReports.closePDF();
     }
 
     @Test
@@ -43,7 +45,7 @@ public class Ejecucion {
     }
 
     @Test
-    public void loginExitoso() throws InterruptedException {
+    public void CPA00001loginExitoso() throws InterruptedException {
         Ingreso ingreso = new Ingreso();
         ingreso.exitoso();
     }
@@ -58,5 +60,17 @@ public class Ejecucion {
     public void cargarArchivo(){
         CargaDeArchivos cargaDeArchivos = new CargaDeArchivos();
         cargaDeArchivos.cargar();
+    }
+
+    @Test
+    public void descargarArchivoConClick() throws InterruptedException, IOException {
+        DescargarArchivo descargarArchivo = new DescargarArchivo();
+        descargarArchivo.descargarClick();
+    }
+
+    @Test
+    public void descargarArchivoSinClick() throws IOException, InterruptedException {
+        DescargarArchivo descargarArchivo = new DescargarArchivo();
+        descargarArchivo.descargarSinClick();
     }
 }

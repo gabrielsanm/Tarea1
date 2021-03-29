@@ -1,29 +1,46 @@
-Utils/DriverManager.java
- driver.DriverManager
- driver.DriverManager$1
-Utils/ReadProperties.java
- Utils.ReadProperties
-Utils/Navegador.java
- constants.Navegador
-Utils/Validaciones.java
- Utils.Validaciones
-Utils/DriverContext.java
- Utils.DriverContext
-testClases/CargaDeArchivos.java
- testClases.CargaDeArchivos
-page/CargaArchivos.java
- page.CargaArchivos
-page/CargaInformacion.java
- page.CargaInformacion
-page/Login.java
- page.Login
-testClases/CargaDeInformacion.java
- testClases.CargaDeInformacion
-testClases/Ingreso.java
- testClases.Ingreso
 page/MatrizInformacion.java
  page.MatrizInformacion
-testSuite/Ejecucion.java
- testSuite.Ejecucion
+testClases/CargaDeInformacion.java
+ testClases.CargaDeInformacion
+Utils/Constants/Navegador.java
+ Utils.Constants.Navegador
+page/Login.java
+ page.Login
+testClases/CargaDeArchivos.java
+ testClases.CargaDeArchivos
+Utils/Utils.java
+ Utils.Utils
+Utils/Reporte/ImageResize.java
+ Utils.Reporte.ImageResize
+testClases/DescargarArchivo.java
+ testClases.DescargarArchivo
+Utils/Constants/Constants.java
+ Utils.Constants.Constants
 testClases/RecuperarInformacion.java
  testClases.RecuperarInformacion
+Utils/Constants/Ambientes.java
+ Utils.Constants.Ambientes
+page/CargaArchivos.java
+ page.CargaArchivos
+Utils/DriverContext.java
+ Utils.DriverContext
+Utils/Reporte/EstadoPrueba.java
+ Utils.Reporte.EstadoPrueba
+page/Descarga.java
+ page.Descarga
+Utils/Reporte/PdfQaNovaReports.java
+ Utils.Reporte.PdfQaNovaReports
+ Utils.Reporte.PdfQaNovaReports$1
+Utils/ReadProperties.java
+ Utils.ReadProperties
+testSuite/Ejecucion.java
+ testSuite.Ejecucion
+Utils/Validaciones.java
+ Utils.Validaciones
+Utils/DriverManager.java
+ Utils.DriverManager
+ Utils.DriverManager$1
+testClases/Ingreso.java
+ testClases.Ingreso
+page/CargaInformacion.java
+ page.CargaInformacion
