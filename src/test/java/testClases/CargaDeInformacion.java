@@ -1,8 +1,8 @@
 package testClases;
 
 import Utils.ReadProperties;
-import page.CargaInformacion;
-import page.Login;
+import page.QaNova.CargaInformacion;
+import page.QaNova.Login;
 
 public class CargaDeInformacion {
     Login login;

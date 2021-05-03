@@ -1,15 +1,9 @@
-page/MatrizInformacion.java
- page.MatrizInformacion
 testClases/CargaDeInformacion.java
  testClases.CargaDeInformacion
-Utils/Constants/Navegador.java
- Utils.Constants.Navegador
-page/Login.java
- page.Login
+testClases/Ingreso.java
+ testClases.Ingreso
 testClases/CargaDeArchivos.java
  testClases.CargaDeArchivos
-Utils/Utils.java
- Utils.Utils
 Utils/Reporte/ImageResize.java
  Utils.Reporte.ImageResize
 testClases/DescargarArchivo.java
@@ -18,29 +12,43 @@ Utils/Constants/Constants.java
  Utils.Constants.Constants
 testClases/RecuperarInformacion.java
  testClases.RecuperarInformacion
+Utils/DriverManager.java
+ Utils.DriverManager
+ Utils.DriverManager$1
 Utils/Constants/Ambientes.java
  Utils.Constants.Ambientes
-page/CargaArchivos.java
- page.CargaArchivos
 Utils/DriverContext.java
  Utils.DriverContext
 Utils/Reporte/EstadoPrueba.java
  Utils.Reporte.EstadoPrueba
-page/Descarga.java
- page.Descarga
+Utils/Constants/Navegador.java
+ Utils.Constants.Navegador
 Utils/Reporte/PdfQaNovaReports.java
  Utils.Reporte.PdfQaNovaReports
  Utils.Reporte.PdfQaNovaReports$1
+Utils/Utils.java
+ Utils.Utils
 Utils/ReadProperties.java
  Utils.ReadProperties
-testSuite/Ejecucion.java
- testSuite.Ejecucion
+page/QaNova/MatrizInformacion.java
+ page.QaNova.MatrizInformacion
+page/Prueba/QANova.java
+ page.Prueba.QANova
+page/QaNova/CargaArchivos.java
+ page.QaNova.CargaArchivos
+page/Prueba/Google.java
+ page.Prueba.Google
+page/QaNova/CargaInformacion.java
+ page.QaNova.CargaInformacion
+page/QaNova/Login.java
+ page.QaNova.Login
+page/QaNova/Descarga.java
+ page.QaNova.Descarga
 Utils/Validaciones.java
  Utils.Validaciones
-Utils/DriverManager.java
- Utils.DriverManager
- Utils.DriverManager$1
-testClases/Ingreso.java
- testClases.Ingreso
-page/CargaInformacion.java
- page.CargaInformacion
+page/Prueba/Resultado.java
+ page.Prueba.Resultado
+testSuite/Ejecucion.java
+ testSuite.Ejecucion
+testClases/ComparacionDeImagenes.java
+ testClases.ComparacionDeImagenes

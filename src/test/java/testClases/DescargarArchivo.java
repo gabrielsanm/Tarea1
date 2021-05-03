@@ -1,6 +1,6 @@
 package testClases;
 
-import page.Descarga;
+import page.QaNova.Descarga;
 
 import java.awt.*;
 import java.io.IOException;

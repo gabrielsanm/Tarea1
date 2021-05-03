@@ -1,9 +1,9 @@
 package testClases;
 
 import Utils.ReadProperties;
-import page.CargaInformacion;
-import page.Login;
-import page.MatrizInformacion;
+import page.QaNova.CargaInformacion;
+import page.QaNova.Login;
+import page.QaNova.MatrizInformacion;
 
 public class RecuperarInformacion {
     Login login;

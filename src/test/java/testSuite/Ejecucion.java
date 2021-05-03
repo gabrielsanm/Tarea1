@@ -23,7 +23,6 @@ public class Ejecucion {
     @AfterTest
     public void tearDown(){
         DriverContext.closeDriver();
-        PdfQaNovaReports.closePDF();
     }
 
     @Test
@@ -45,9 +44,10 @@ public class Ejecucion {
     }
 
     @Test
-    public void CPA00001loginExitoso() throws InterruptedException {
+    public void loginExitoso() throws InterruptedException {
         Ingreso ingreso = new Ingreso();
         ingreso.exitoso();
+        PdfQaNovaReports.closePDF();
     }
 
     @Test
@@ -72,5 +72,26 @@ public class Ejecucion {
     public void descargarArchivoSinClick() throws IOException, InterruptedException {
         DescargarArchivo descargarArchivo = new DescargarArchivo();
         descargarArchivo.descargarSinClick();
+    }
+
+    @Test
+    public void loginJson() throws IOException {
+        Ingreso ingreso = new Ingreso();
+        ingreso.ingresoConJson();
+        PdfQaNovaReports.closePDF();
+    }
+
+    @Test
+    public void comparacion() throws IOException, InterruptedException {
+        ComparacionDeImagenes comparacionDeImagenes = new ComparacionDeImagenes();
+        comparacionDeImagenes.compararFerrari();
+        PdfQaNovaReports.closePDF();
+    }
+
+    @Test
+    public void comparacionFallida() throws IOException, InterruptedException {
+        ComparacionDeImagenes comparacionDeImagenes = new ComparacionDeImagenes();
+        comparacionDeImagenes.compararFerrariMal();
+        PdfQaNovaReports.closePDF();
     }
 }

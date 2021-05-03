@@ -42,7 +42,6 @@ public class PdfQaNovaReports {
     public PdfQaNovaReports() {
     }
 
-
     public static String getFullTestName() {
         return testName + " - " + getFinalStatusTest() + ".pdf";
     }
@@ -53,7 +52,6 @@ public class PdfQaNovaReports {
         } else {
             return "Failed";
         }
-
     }
 
     public static String getReleaseName() {
@@ -66,26 +64,22 @@ public class PdfQaNovaReports {
                 return textArray[textArray.length - 1];
             }
         }
-
         return null;
     }
 
     public static String getTestName() {
         StackTraceElement[] ste = Thread.currentThread().getStackTrace();
         String testName = "";
-
         for (int i = 0; i < ste.length - 1; ++i) {
-            if (ste[i].getMethodName().indexOf("PA00") > 0) {
+            if (ste[i].getMethodName().indexOf("PA00") > 0 || ste[i].getClassName().indexOf("estSuite") > 0) {
                 testName = ste[i].getMethodName();
             }
         }
-
         return testName;
     }
 
     public static String getBranchName() {
         String line = "";
-
         try {
             Process process = Runtime.getRuntime().exec("git rev-parse --abbrev-ref HEAD");
             process.waitFor();
@@ -94,13 +88,11 @@ public class PdfQaNovaReports {
         } catch (IOException | InterruptedException var3) {
             var3.printStackTrace();
         }
-
         return line;
     }
 
     public static String getRepositoryName() {
         String line = "";
-
         try {
             Process process = Runtime.getRuntime().exec("git rev-parse --show-toplevel");
             process.waitFor();
@@ -110,13 +102,11 @@ public class PdfQaNovaReports {
         } catch (IOException | InterruptedException var4) {
             var4.printStackTrace();
         }
-
         return line;
     }
 
     public static String getRepositoryEmail() {
         String line = "";
-
         try {
             Process process = Runtime.getRuntime().exec("git config user.email");
             process.waitFor();
@@ -125,7 +115,6 @@ public class PdfQaNovaReports {
         } catch (IOException | InterruptedException var3) {
             var3.printStackTrace();
         }
-
         return line;
     }
 
@@ -205,7 +194,6 @@ public class PdfQaNovaReports {
 
     public static void createTitlePage() {
         System.out.println("[PdfBciReport] createTitlePage");
-
         try {
             document.newPage();
             Properties properties = ReadProperties.readFromConfig("LogoQaNova.properties");
@@ -213,7 +201,6 @@ public class PdfQaNovaReports {
                     "src/test/resources");
             byte[] decoded = Base64.decode(properties.getProperty("logo"));
             com.itextpdf.text.Image image = com.itextpdf.text.Image.getInstance(decoded);
-
             image.setAlignment(1);
             image.scaleAbsolute(400.0F, 200.0F);
             Paragraph fixImagePosition = new Paragraph();
@@ -263,7 +250,6 @@ public class PdfQaNovaReports {
                 parrafo.setFont(fontFAILED);
                 parrafo.add("FAILED");
             }
-
             parrafo.setAlignment(8);
             parrafo.setSpacingAfter(5.0F);
             document.add(parrafo);
@@ -293,7 +279,6 @@ public class PdfQaNovaReports {
         startDate = new Date();
         estadoFinalPrueba = false;
         cambioEstado = false;
-
         try {
             randomName = randomAlphaNumeric(15);
             writePDF = PdfWriter.getInstance(document, new FileOutputStream(new File("tmp/" + randomName)));
@@ -301,7 +286,6 @@ public class PdfQaNovaReports {
         } catch (DocumentException | FileNotFoundException var2) {
             var2.printStackTrace();
         }
-
     }
 
     public static void closePDF() {
@@ -327,7 +311,6 @@ public class PdfQaNovaReports {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
@@ -345,7 +328,6 @@ public class PdfQaNovaReports {
         } catch (DocumentException var10) {
             var10.printStackTrace();
         }
-
         String textStatus = "PASSED";
         if (!textoEsperado.equals(textoObtenido)) {
             textStatus = "FAILED";
@@ -353,7 +335,6 @@ public class PdfQaNovaReports {
             cambioEstado = true;
             errorFatal = true;
         }
-
         Paragraph parrafo = new Paragraph();
         parrafo.setFont(normalBloodFont);
         parrafo.add("Step Name: ");
@@ -375,7 +356,6 @@ public class PdfQaNovaReports {
         } else {
             parrafo.setFont(fontFAILED);
         }
-
         parrafo.add(textStatus);
         parrafo.setAlignment(0);
         table.addCell(parrafo);
@@ -399,7 +379,6 @@ public class PdfQaNovaReports {
         parrafo.add(textoObtenido);
         parrafo.setAlignment(0);
         table.addCell(parrafo);
-
         try {
             if (textoEsperado.length() > 100) {
                 if (writePDF.getVerticalPosition(true) < ((table.calculateHeights() - textoEsperado.length()) + 100)) {
@@ -417,23 +396,17 @@ public class PdfQaNovaReports {
         } catch (DocumentException var9) {
             var9.printStackTrace();
         }
-
     }
 
     public static void addWebReportImage(String nombrePaso, String descripcion, EstadoPrueba estadoPrueba, boolean fatal) {
-
         PdfPTable table = new PdfPTable(2);
         table.setTotalWidth(100.0F);
-
         float[] widths = new float[]{24.0F, 60.0F};
-
-
         try {
             table.setWidths(widths);
         } catch (DocumentException var12) {
             var12.printStackTrace();
         }
-
         Paragraph parrafo = new Paragraph();
         parrafo.setFont(normalBloodFont);
         parrafo.add("Step Name ");
@@ -444,7 +417,6 @@ public class PdfQaNovaReports {
         parrafo.add(nombrePaso);
         parrafo.setAlignment(0);
         table.addCell(parrafo);
-
         parrafo = new Paragraph();
         parrafo.setFont(normalBloodFont);
         parrafo.add("Step Status");
@@ -473,7 +445,6 @@ public class PdfQaNovaReports {
                 parrafo.add("PASSED");
                 estadoFinalPrueba = true;
         }
-
         parrafo.setAlignment(0);
         table.addCell(parrafo);
         parrafo = new Paragraph();
@@ -486,7 +457,6 @@ public class PdfQaNovaReports {
         parrafo.add(descripcion);
         parrafo.setAlignment(0);
         table.addCell(parrafo);
-
         try {
             com.itextpdf.text.Image image = com.itextpdf.text.Image.getInstance(getScreenshotWeb().getAbsolutePath());
             image.setAlignment(0);
@@ -496,19 +466,16 @@ public class PdfQaNovaReports {
             pCell.setColspan(2);
             pCell.addElement(image);
             table.addCell(pCell);
-
             //if (writePDF.getVerticalPosition(true) < 428.54){
             if ((writePDF.getVerticalPosition(true) < table.calculateHeights()) || (writePDF.getVerticalPosition(true) < 428.54)) {
                 document.newPage();
             }
             document.add(table);
             document.add(new Paragraph("\n"));
-
             if (fatal) {
                 closePDF();
                 Assert.fail("Error al continuar el flujo");
             }
-
         } catch (BadElementException var10) {
             System.out.println("Image BadElementException" + var10);
         } catch (IOException var11) {
@@ -516,20 +483,17 @@ public class PdfQaNovaReports {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     public static void addReport(String textoNombrePaso, String descripcion, EstadoPrueba estadoPrueba, boolean fatal) {
         PdfPTable table = new PdfPTable(2);
         table.setTotalWidth(100.0F);
         float[] widths = new float[]{24.0F, 60.0F};
-
         try {
             table.setWidths(widths);
         } catch (DocumentException var9) {
             var9.printStackTrace();
         }
-
         Paragraph parrafo = new Paragraph();
         parrafo.setFont(normalBloodFont);
         parrafo.add("Step Name: ");
@@ -568,7 +532,6 @@ public class PdfQaNovaReports {
                 parrafo.add("PASSED");
                 estadoFinalPrueba = true;
         }
-
         parrafo.setAlignment(0);
         table.addCell(parrafo);
         parrafo = new Paragraph();
@@ -581,9 +544,7 @@ public class PdfQaNovaReports {
         parrafo.add(descripcion);
         parrafo.setAlignment(0);
         table.addCell(parrafo);
-
         try {
-
             if (descripcion.length() > 100) {
                 if (writePDF.getVerticalPosition(true) < ((table.calculateHeights() - descripcion.length()) + 100)) {
                     document.newPage();
@@ -600,7 +561,6 @@ public class PdfQaNovaReports {
         } catch (DocumentException var8) {
             var8.printStackTrace();
         }
-
     }
 
 //    private static byte[] getScreenshotWeb() {
@@ -609,9 +569,7 @@ public class PdfQaNovaReports {
 
     public static File getScreenshotWeb() {
         File scrFile = ((TakesScreenshot) DriverContext.getDriver()).getScreenshotAs(OutputType.FILE);
-
         scrFile = new File(FixTamano(scrFile));
-
         return new File(scrFile.getPath());
     }
 
@@ -734,13 +692,11 @@ public class PdfQaNovaReports {
         PdfPTable table = new PdfPTable(2);
         table.setTotalWidth(100.0F);
         float[] widths = new float[]{24.0F, 60.0F};
-
         try {
             table.setWidths(widths);
         } catch (DocumentException var12) {
             var12.printStackTrace();
         }
-
         Paragraph parrafo = new Paragraph();
         parrafo.setFont(normalBloodFont);
         parrafo.add("Step Name ");
